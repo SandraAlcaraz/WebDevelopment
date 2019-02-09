@@ -1,0 +1,26 @@
+[
+  {
+    "planta":"Aloe vera",
+    "link": "http:aloevera"
+  },
+  {
+    "planta": "Hierbabuena",
+    "link": "http:hierbabuena"
+  },
+  {
+    "planta": "Manzanilla",
+    "link": "http:Manzanilla"
+  },
+  {
+    "planta":"Eucalipto",
+    "link": "http:Eucalipto"
+  },
+  {
+    "planta": "Hiperico",
+    "link": "http:Hiperico"
+  },
+  {
+    "planta": "Agave",
+    "link": "http:Agave"
+  }
+  ]
