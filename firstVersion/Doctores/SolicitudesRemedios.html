@@ -24,9 +24,13 @@
 			</ul>
 		</div>
 	</nav>
-	
+	<br>
+	Remedio:
+	<input type="text" id="remedy">
+	<br>
+	<button id="submit" onclick="addData()">Añadir</button>
 	<!-- Lista -->
-	<div class="list-group">
+	<div class="list-group" id="demo">
 		<a href="#" class="list-group-item list-group-item-action list-group-item-warning">
 			Remedios pendientes
 		</a>
@@ -48,5 +52,17 @@
 		<a href="#" class="list-group-item list-group-item-action">Remedio para el resfriado con platano</a>
        
 	</div>
+
+	<script>
+	  var lista = document.getElementById('demo');
+	  function addData() {
+		var remedy = document.getElementById('remedy').value;
+		var entry = document.createElement('a');
+    	entry.appendChild(document.createTextNode(remedy));
+    	entry.setAttribute("class", "list-group-item list-group-item-action");
+    	lista.appendChild(entry);
+  	}
+
+</script>
 
 </html>
