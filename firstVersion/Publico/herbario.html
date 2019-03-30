@@ -68,7 +68,7 @@
             <a href="aloe-vera.html"><img class="card-img-top" src="../img/aloe.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="aloe-vera.html">Aloe vera</a>
+                <a id="ola" onclick="colocarCookie()" href="aloe-vera.html">Aloe vera</a>
               </h4>
               <p class="card-text">El aloe vera, también conocido como sábila, es una planta que nos ofrece numerosos beneficios y con la que podemos fabricar innumerables productos de aloe vera, tanto cosméticos como otros.</p>
             </div>
@@ -171,6 +171,38 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+	function colocarCookie(){
+		var d = new Date();
+		var e=document.getElementById("ola");;
+		//var strUser = e.options[e.selectedIndex].value;		
+		d.setTime(d.getTime() + (5*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = "name" + "=" + e.textContent + ";" + expires + ";path=/";
+
+	}
+	function getCookie() {
+	
+	
+		var name = "contry" + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	
+	
+	
+	
+	</script>
 
   </body>
 
