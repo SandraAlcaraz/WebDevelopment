@@ -6,6 +6,7 @@
     <link href="../css/3-col-portfolio.css" rel="stylesheet">
 	<title>Solicitudes Remedios</title>
 	<!--Nav bar-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
 			<ul class="navbar-nav">
@@ -19,7 +20,7 @@
 					<a class="nav-link" href="#">Pendientes</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Cerrar sesion</a>
+					<a id="bttnLogOut" class="nav-link">Cerrar sesion</a>
 				</li>
 			</ul>
 		</div>
@@ -50,7 +51,7 @@
 		<a href="#" class="list-group-item list-group-item-action">Remedio para el resfriado con platano</a>
 		<a href="#" class="list-group-item list-group-item-action">Remedio para el resfriado con platano</a>
 		<a href="#" class="list-group-item list-group-item-action">Remedio para el resfriado con platano</a>
-       
+
 	</div>
 
 	<script>
@@ -64,5 +65,6 @@
   	}
 
 </script>
+<script type="text/javascript" src="logout.js"></script>
 
 </html>
