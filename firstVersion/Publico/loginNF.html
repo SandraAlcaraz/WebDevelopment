@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
@@ -20,10 +21,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Pagina principal
-							<span class="sr-only">(current)</span>
-						</a>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Pagina principal</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="herbario.html">Herbario</a>
@@ -31,8 +30,8 @@
 					<li class="nav-item">
 						<a class="nav-link" href="medicina.html">Medicina</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="login.html">Entrar</a>
+					<li class="nav-item active">
+						<a class="nav-link" href="login.html">Entrar<span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="registro.html">Registrarse</a>
@@ -47,11 +46,12 @@
 	<div class="container">Hola</div>
 	<div class="container">Hola</div>
 	<div class="container">  </div>
+	<br>
 <div class="container">
 	<div class="d-flex justify-content-center h-300">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Ingresar al sitio</h3>
 
 			</div>
 			<div class="card-body">
@@ -60,34 +60,43 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input id="textEmail" type="email" class="form-control" placeholder="correo">
+						<input id="textEmail" type="email" class="form-control" placeholder="Correo">
 
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input id ="textPass" type="password" class="form-control" placeholder="password">
+						<input id ="textPass" type="password" class="form-control" placeholder="Contraseña">
 					</div>
 
 					<div class="form-group">
-						<button id="bttnLI" class="btn btn-action">Log in</button>
+<<<<<<< HEAD:firstVersion/Publico/loginNF.html
+						<button id="bttnSignIn" class="btn btn-action">Log in</button>
 			</div>
-
 			<div class="form-group">
-				<button id="bttnSU" class="btn btn-action">Sing Up</button>
+				<button id="bttnLogOut" class="btn btn-action">Log Out</button>
 			</div>
+			<script src="loginFuncional.js"></script>
+=======
+						<button id="bttnLI" class="btn btn-action">Ingresar</button>
+					</div>
+
+					<div class="form-group">
+						<button id="bttnSU" class="btn btn-action">Registrarse</button>
+					</div>
 
 			<script src="login.js"></script>
+>>>>>>> c9a871ba2d741046138687f9b9114804b2cfb452:firstVersion/Publico/login.html
 					<div class="form-group">
 					<!--	<input type="submit" value="Login"  class="btn float-right login_btn"> -->
-<a href="../Doctores/SolicitudesRemedios.html" class="w3-button w3-black">Entrar</a>
+			<a href="../Doctores/SolicitudesRemedios.html" class="w3-button w3-black">Entrar</a>
 					</div>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					No tienes una cuenta?<a href="registro.html">Crear cuenta</a>
+					¿No tienes una cuenta?&ensp;<a href="registro.html">Presiona aquí</a>
 				</div>
 
 			</div>

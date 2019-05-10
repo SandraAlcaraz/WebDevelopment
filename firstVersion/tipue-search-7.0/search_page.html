@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Tipue Search</title>
+	<!---------------------------------- Tipue search engine ---------------------------------->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+	<script src="tipuesearch/tipuesearch_content.js"></script>
+	<link rel="stylesheet" href="tipuesearch/tipuesearch.css">
+	<script src="tipuesearch/tipuesearch_set.js"></script>
+	<script src="tipuesearch/tipuesearch.min.js"></script>
+
+	<!---------------------------------- Navigation bar ---------------------------------->
+	<!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Medicina natural</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../Publico/index.html">Pagina principal<span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Publico/herbario.html">Herbario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Publico/medicina.html">Medicina</a>
+            </li>
+			      <li class="nav-item">
+              <a class="nav-link" href="../Publico/login.html">Entrar</a>
+            </li>
+			      <li class="nav-item">
+              <a class="nav-link" href="../Publico/registro.html">Registrarse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Publico/about-page.html">Acerca de</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<div style="position:absolute; left:150px; top:70px;">
+		<!-- Search box -->
+		<form>
+			<div class="tipue_search_group">
+				<input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button type="submit" class="tipue_search_button"><div class="tipue_search_icon">&#9906;</div></button>
+			</div>
+		</form>
+
+		<!-- Search results displayed in this div -->
+		<div id="tipue_search_content"></div>
+
+		<footer class="foot">
+		<div class="wrap wider"><div class="grid" style="padding-top: 20px;"><div class="unit whole"><div class="fo-1"><p>&copy; 2018 Tipue. Est London.</div>
+		</div></div></div>
+		</div>
+	</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#tipue_search_input').tipuesearch();
+	});
+</script>
+
+</body>
+</html>
