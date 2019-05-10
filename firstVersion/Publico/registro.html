@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Crear cuenta</title>
@@ -9,9 +8,7 @@
 
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	
 </head>
 <body>
 	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
@@ -75,14 +72,14 @@
 
 					</div>
           <div class="input-group">
-  <div class="input-group-prepend">
+ <div class="input-group-prepend">
     <span class="input-group-text"><i class="far fa-file-pdf"></i></span>
 
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="cvFile" >
-    <label class="custom-file-label" >Curiruculum</label>
+    <input type="file" class="custom-file-input" id="cFile" >
+    <label class="custom-file-label" >Curriculum</label>
   </div>
-	  </div>
+</div>
 </div>
 <div class="input-group">
 <div class="input-group-prepend">
@@ -102,7 +99,7 @@
 						<input id="textPass" type="password" class="form-control" placeholder="password">
 					</div>
 
-					<button id="bttnSingUp" type="button" name="button">SignUp</button>
+					<button id="bttnSingUp" type="button" name="button" onclick="submitClick()">SignUp</button>
 					<script src="registro.js"></script>
 				</form>
 			</div>

@@ -8,9 +8,8 @@ function submitClick(){
 	var img=myform.elements[4];
 // Create a root reference
 	var storageRef = firebase.storage().ref();
-	var tmp=""
 // Create a reference to 'images/mountains.jpg'
-	var ImagesRef = storageRef.child('imagenes/'+img.files[0].value).put(img.files[0]);
+	var ImagesRef = storageRef.child('imagenes/'+img.files[0].value).put(img.files[0]).then(function(){
 	var ima=firebase.storage().ref('imagenes/'+img.files[0].value).getDownloadURL().then(function(url){
 			
 		var firebaseRef=firebase.database().ref('Recetas/');
@@ -22,6 +21,6 @@ function submitClick(){
 		imgUrl:url,
 	});
 		
-})
+}))};
 myform.reset();
 }
