@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="blog-post-demo" class="demo">
+    <blog-post
+      v-bind:imgurl= 'imgurl'
+      v-bind:info= 'info'
+      v-bind:mail= 'mail'
+      v-bind:title= 'title'
+      v-bind:username='username'
+    ></blog-post>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+  <script>
+    //var cookie;
+    function readCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    var config = {
+      apiKey: "AIzaSyC5n5vAYtpY3pmzPHilsa0ZpEwPrS1JoXI",
+      authDomain: "natura-aebed.firebaseapp.com",
+      databaseURL: "https://natura-aebed.firebaseio.com",
+      projectId: "natura-aebed",
+      storageBucket: "natura-aebed.appspot.com",
+      messagingSenderId: "648423816836"
+    };
+    firebase.initializeApp(config);
+    database = firebase.database();
+    var ref = database.ref('Recetas/');                           
+    Vue.component('blog-post', {
+      props: ['imgurl','info','mail','title','username'],
+      template: '<div class="blog-post"> \
+      <h3>{{ title }}</h3> \
+      <p> {{ info }} </p> \
+      <img :src=imgurl>\
+      </div>'
+    })
+
+    new Vue({
+      el: '#blog-post-demo',
+      data: {
+        imgurl: '',
+        info: '',
+        mail: '',
+        title: '',
+        username:''
+    },
+      created: function () {
+        // Alias the component instance as `vm`, so that we  
+        // can access it inside the promise function
+        var vm = this;
+        var receta;
+        ref.on('value', function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+            var childData = childSnapshot.val();
+            if(childData.title == readCookie('planta')){
+              receta = childData;
+            }
+          });
+          vm.imgurl = receta.imgUrl;
+          vm.info = receta.info;
+          vm.mail = receta.mail;
+          vm.title = receta.title;
+          vm.username = receta.username;
+        });
+      }
+    })
+  </script>
+</body>
+</html>

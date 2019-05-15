@@ -63,10 +63,10 @@
       <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Aloe Vera','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/aloe.jpg" alt=""></a>
+            <a href="aloe-vera.html"><img class="card-img-top" src="../img/aloe.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta1" onclick="createCookie('planta','Aloe Vera','2')" href="vue_dinamico.html">Aloe vera</a>
+                <a id="planta1" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Aloe vera</a>
               </h4>
               <p class="card-text">El aloe vera, también conocido como sábila, es una planta que nos ofrece numerosos beneficios y con la que podemos fabricar innumerables productos de aloe vera, tanto cosméticos como otros.</p>
             </div>
@@ -74,10 +74,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Hierbabuena','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/hierbabuena.jpg" alt=""></a>
+            <a href="hierbabuena.html"><img class="card-img-top" src="../img/hierbabuena.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta2" onclick="createCookie('planta','Hierbabuena','2')" href="vue_dinamico.html">Hierbabuena</a>
+                <a id="planta2" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Hierbabuena</a>
               </h4>
               <p class="card-text">Tiene propiedades útiles, antiespasmódicas, es carminativo, antiséptico, analgésico, antiinflamatorio y estimulante.</p>
             </div>
@@ -85,10 +85,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Manzanilla','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/manzanilla.jpg" alt=""></a>
+            <a href="manzanilla.html"><img class="card-img-top" src="../img/manzanilla.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta3" onclick="createCookie('planta','Manzanilla','2')" href="vue_dinamico.html">Manzanilla</a>
+                <a id="planta3" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Manzanilla</a>
               </h4>
               <p class="card-text">Los efectos terapéuticos asociados a la manzanilla son digestiva, carminativa, sedante, tónica, vasodilatadora y antiespasmódica.Como infusión se usa para alivios de estómagos. Otro de los usos de la manzanilla es para lavar los ojos en caso de alergias.</p>
             </div>
@@ -96,10 +96,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Eucalipto','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/eucalipto.jpg" alt=""></a>
+            <a href="eucalipto.html"><img class="card-img-top" src="../img/eucalipto.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta4" onclick="createCookie('planta','Eucalipto','2')" href="vue_dinamico.html">Eucalipto</a>
+                <a id="planta4" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Eucalipto</a>
               </h4>
               <p class="card-text">El uso del eucalipto como planta medicinal está recomendado para aquellas enfermedades que afectan a las vías respiratorias como la gripe, el asma o los catarros. Descubre sus propiedades.</p>
             </div>
@@ -107,10 +107,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Hiperico','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/hiperico.jpg" alt=""></a>
+            <a href="hiperico.html"><img class="card-img-top" src="../img/hiperico.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta5" onclick="createCookie('planta','Hiperico','2')" href="vue_dinamico.html">Hiperico</a>
+                <a id="planta5" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Hiperico</a>
               </h4>
               <p class="card-text">Esta planta medicinal tiene diferentes propiedades, pero destaca el hecho de que posee propiedades antidepresivas.</p>
             </div>
@@ -118,10 +118,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a onclick="createCookie('planta','Agave','2')" href="vue_dinamico.html"><img class="card-img-top" src="../img/agave.jpg" alt=""></a>
+            <a href="agave.html"><img class="card-img-top" src="../img/agave.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a id="planta6" onclick="createCookie('planta','Agave','2')" href="vue_dinamico.html">Agave</a>
+                <a id="planta6" onclick="colocarCookie(this.id)" href="vue_dinamico.html">Agave</a>
               </h4>
               <p class="card-text">El agave posee también propiedades medicinales. Concretamente destaca su uso en la curación de heridas y llagas, pudiendo emplearse como desinfectante.</p>
             </div>
@@ -170,16 +170,37 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
-	function createCookie(name,value,days) {
-      if (days) {
-        var date = new Date();
-        date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
-      }
-      else var expires = "";
-      document.cookie = name+"="+value+expires+"; path=/";
-  }
+	function colocarCookie(idClicked){
+		var d = new Date();
+		var e=document.getElementById(idClicked);;
+		//var strUser = e.options[e.selectedIndex].value;		
+		d.setTime(d.getTime() + (5*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = "name" + "=" + e.textContent + ";" + expires + ";path=/";
 
+	}
+	function getCookie() {
+	
+	
+		var name = "name" + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	//var d ;
+  console.log(getCookie());
+	
+	
+	
 	</script>
 
   </body>
