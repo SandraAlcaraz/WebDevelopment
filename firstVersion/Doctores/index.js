@@ -32,9 +32,10 @@ function submitClick(){
 	var img=myform.elements[4];
 // Create a root reference
 	var storageRef = firebase.storage().ref();
+	var num=Math.random()*(1000000000000-1000)+1000;
 // Create a reference to 'images/mountains.jpg'
-	var ImagesRef = storageRef.child('imagenes/'+img.files[0].value).put(img.files[0]).then(function(){
-	var ima=firebase.storage().ref('imagenes/'+img.files[0].value).getDownloadURL().then(function(url){
+	var ImagesRef = storageRef.child('imagenes/'+num+'.jpg').put(img.files[0]).then(function(){
+	var ima=firebase.storage().ref('imagenes/'+num+'.jpg').getDownloadURL().then(function(url){
 
 		var firebaseRef=firebase.database().ref('Recetas/');
 		firebaseRef.push({
@@ -44,12 +45,9 @@ function submitClick(){
 		info: info,
 		imgUrl:url,
 	});
-<<<<<<< HEAD
-		
-}))};
-=======
 
-})
->>>>>>> 2d1c72d8993d0805362bb223e9ea6a2d30647de9
+		
+	})});
+
 myform.reset();
 }
