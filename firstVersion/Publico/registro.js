@@ -54,7 +54,7 @@ function submitClick(){
 	//Upload users and docuements
 	console.log(Cedula.value)
 	loadDocuement();
-var ima=loadDocuement().then(function(){firebase.storage().ref('documentos/jajaja.pdf').getDownloadURL().then(function(url){
+var ima=firebase.storage().ref('documentos/jajaja.pdf').getDownloadURL().then(function(url){
 			
 	var firebaseRef=firebase.database().ref('DocP/');
 		firebaseRef.push({
@@ -62,5 +62,5 @@ var ima=loadDocuement().then(function(){firebase.storage().ref('documentos/jajaj
 		mail:txtEmail.value,
 		cedula:url,
 	});
-})});
+});
 }	

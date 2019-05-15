@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Aloe vera</title>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style type="text/css">
         div { height:auto; }
         .galeria { width:auto; float:center; }
@@ -79,7 +79,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>{{}}</h1>
+						<div id="components-demo">
+						<post title="Aloe"></post>
                         <h2 class="subheading">Características</h2>
                         <span class="meta">Posted by <a>Alex</a> on February 9, 2019</span>
                     </div>
@@ -137,7 +138,7 @@
                     </p>
 
                     <p style="text-align: justify;">Entre las propiedades más significativas se encuentran compuestos bioactivos que mejoran tu salud, tratamiento de las úlceras bucales (aftas), el jugo puro reduce la placa dental tanto como los enjuagues bucales, puede mejorar la elasticidad de la piel y ayudar a prevenir las arrugas, acelera la curación de quemaduras, tiene potentes propiedades antioxidantes y antibacterianas, puede reducir los niveles de azúcar en sangre en personas diabéticas y así también ayuda a tratar el estreñimiento.</p>
-
+</div>
                 </div>
             </div>
         </div>
@@ -238,5 +239,16 @@
     <script src="../js/clean-blog.min.js"></script>
 
 </body>
+  <script>
 
+
+    Vue.component('post', {
+      props: ['title'],
+      template: '<h1>{{ title }}</h1>
+				<a></a>'
+    })
+	new Vue({ el: '#components-demo' })
+
+
+  </script>
 </html>
