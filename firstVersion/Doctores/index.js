@@ -44,12 +44,9 @@ function submitClick(){
 		info: info,
 		imgUrl:url,
 	});
-<<<<<<< HEAD
-		
-}))};
-=======
 
-})
->>>>>>> 2d1c72d8993d0805362bb223e9ea6a2d30647de9
+		
+})};
+
 myform.reset();
 }
