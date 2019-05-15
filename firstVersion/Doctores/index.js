@@ -49,5 +49,6 @@ function submitClick(){
 		
 	})});
 
+
 myform.reset();
 }
