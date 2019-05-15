@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<h2>Selecciona la opción deseada</h2>
+<p>Mueve el mouse sobre el botón desplegable.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Opciones</button>
+  <div class="dropdown-content">
+    <a id= "red" href="#">Rojo</a>
+    <a id= "blue" href="#">Azul</a>
+    <a id= "green" href="#">Verde</a>
+  </div>
+</div>
+<button onclick="alertCookie()">Show cookies</button>
+<button onclick="eraseCookie('color')">Delete cookies</button>
+</body>
+<script>
+  checarColor();
+  document.getElementById("red").addEventListener("click", clickRed);
+  document.getElementById("blue").addEventListener("click", clickBlue);
+  document.getElementById("green").addEventListener("click", clickGreen);
+  console.log(readCookie('color'));
+  
+  function checarColor(){
+    if (readCookie('color') === "#FF0000") {
+      document.body.style.background = "#FF0000";
+    }
+    else if (readCookie('color') === "#000080") {
+      document.body.style.background = "#000080";
+    }
+    else if (readCookie('color') === "#ADFF2F") {
+      document.body.style.background = "#ADFF2F";
+    }
+  }
+
+  function clickRed(){
+    document.body.style.background = "#FF0000";
+    createCookie('color','#FF0000','2');
+  }
+
+   function clickBlue(){
+    document.body.style.background = "#000080";
+    createCookie('color','#000080','2');
+  }
+
+   function clickGreen(){
+    document.body.style.background = "#ADFF2F";
+    createCookie('color','#ADFF2F','2');
+  }
+
+  function alertCookie() {
+    alert(document.cookie);
+  }
+
+  function createCookie(name,value,days) {
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+      }
+      else var expires = "";
+      document.cookie = name+"="+value+expires+"; path=/";
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+
+  function eraseCookie(name) {
+    createCookie(name,"",-1);
+  }
+
+</script>
+</html>
